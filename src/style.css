@@ -1,12 +1,12 @@
 :root {
 	--smpPopupBg: #fff;
 	--smpPopupRadius: 4px;
-	--smpPopupIndex: 4px;
-	--width-scroll: 0;
+	--smpPopupIndex: 99999999;
+	--smpPopupWidthScroll: 0;
 }
 .open_popup {
 	overflow: hidden;
-	padding-right: var(--width-scroll);
+	padding-right: var(--smpPopupWidthScroll);
 }
 
 
@@ -24,7 +24,7 @@
 	background: rgba(0, 0, 0, 0.7);
 
 	&.open {
-		z-index: 99999999;
+		z-index: var(--smpPopupIndex);
 		opacity: 1;
 		visibility: visible;
 	}

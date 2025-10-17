@@ -13,7 +13,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/yura-brd/SimpSelect"
+		"url": "https://github.com/yura-brd/SmpPopup"
 	},
 	"keywords": [
 		"webpack",
@@ -30,9 +30,9 @@
 	"author": "Yurii Kopot <yura.brd@gmail.com> (https://yu-k.site/)",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/yura-brd/SimpSelect/issues"
+		"url": "https://github.com/yura-brd/SmpPopup/issues"
 	},
-	"homepage": "https://github.com/yura-brd/SimpSelect#readme",
+	"homepage": "https://github.com/yura-brd/SmpPopup#readme",
 	"peerDependencies": {},
 	"devDependencies": {
 		"@babel/core": "^7.22.20",

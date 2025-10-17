@@ -120,8 +120,8 @@
 	border: none;
 	outline: none;
 }
-.icon_close:before,
-.icon_close:after {
+.b_popup__close:before,
+.b_popup__close:after {
 	content: " ";
 	position: absolute;
 	background: currentColor;
@@ -130,9 +130,9 @@
 	width: 75%;
 	left: 15%;
 }
-.icon_close:before {
+.b_popup__close:before {
 	transform: rotate3d(0, 0, 1, 45deg);
 }
-.icon_close:after {
+.b_popup__close:after {
 	transform: rotate3d(0, 0, 1, -45deg);
 }

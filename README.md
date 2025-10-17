@@ -3,7 +3,7 @@
 
 ## Installation
 ```
-npm install simp-popup --save
+npm install smp-popup
 
 ```
 ## Importing

@@ -1,0 +1,138 @@
+:root {
+	--smpPopupBg: #fff;
+	--smpPopupRadius: 4px;
+	--smpPopupIndex: 4px;
+	--width-scroll: 0;
+}
+.open_popup {
+	overflow: hidden;
+	padding-right: var(--width-scroll);
+}
+
+
+.b_popup {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -100;
+	opacity: 0;
+	visibility: hidden;
+	transition: .4s opacity;
+	background: rgba(0, 0, 0, 0.7);
+
+	&.open {
+		z-index: 99999999;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.b_popup__overlay {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 3;
+	opacity: 0;
+	transition: .24s opacity;
+
+	transition-duration: inherit;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(.22,.61,.36,1);
+
+	.b_popup.open & {
+		opacity: 1;
+	}
+}
+
+.b_popup__wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	text-align: center;
+
+	overflow: auto;
+	z-index: 4;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 0;
+	}
+}
+
+.b_popup__body {
+	position: relative;
+	display: inline-block;
+	min-height: 100px;
+
+	max-width: 98%;
+	padding: 0;
+	background-color: var(--smpPopupBg, #efefef);
+	border-radius: var(--smpPopupRadius, 4px);
+
+	text-align: left;
+	vertical-align: middle;
+
+	border-width: 0;
+
+	z-index: 10;
+
+	transform: translateY(-100vh);
+	transition: .4s transform;
+
+	.b_popup.open & {
+		transform: translateY(0);
+	}
+}
+
+.b_popup__close  {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: currentColor;
+
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	background: transparent;
+	font: inherit;
+	line-height: normal;
+	text-align: inherit;
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+	font-size: 0;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+.icon_close:before,
+.icon_close:after {
+	content: " ";
+	position: absolute;
+	background: currentColor;
+	height: 1px;
+	display: block;
+	width: 75%;
+	left: 15%;
+}
+.icon_close:before {
+	transform: rotate3d(0, 0, 1, 45deg);
+}
+.icon_close:after {
+	transform: rotate3d(0, 0, 1, -45deg);
+}

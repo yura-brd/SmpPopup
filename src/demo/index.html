@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="../style.css" />
+
+<!--	<script  src="../smpPopup.js"></script>-->
+
+	<style>
+		.b_popup__body {
+			width: 620px;
+		}
+		.test_content {
+			padding: 30px;
+			max-width: 100%;
+		}
+	</style>
+</head>
+
+<style>
+
+</style>
+<body>
+
+<button class="show_popup">show popup</button>
+<button class="show_popup_items" data-href="popup_2">show popup 2</button>
+
+<div style="display: none;">
+	<div id="popup_1"  class="test_content">
+		<p>Lorem ipsum dolor sit amet.</p>
+		<div>
+			<label>
+				<input type="text">
+			</label>
+		</div>
+		<button class="show_popup_items" data-href="popup_2">show popup 2</button>
+
+	</div>
+	<div id="popup_2"  class="test_content">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores commodi delectus dolore, doloremque ipsum libero neque rerum sed soluta, vitae voluptas voluptate? Animi assumenda deserunt dicta doloremque eos esse ex expedita fuga fugit illum, ipsam maiores necessitatibus neque nihil nostrum, numquam optio ratione repellat sit suscipit totam vel voluptatum?
+		<div>
+			<button class="show_popup_items" data-href="popup_1">show popup 1</button>
+
+		</div>
+	</div>
+</div>
+
+
+<script>
+  const popup = new SmpPopup({
+    closeAddClass: 'icon_close g_reset_btn',
+    callbackOpenOnce: wrapperNode => {
+	    console.log('wrapperNode', wrapperNode);
+    },
+    callbackCloseAlways: (wrapperNode) => {
+      console.log('callbackCloseAlways', wrapperNode);
+      // AppScripts.openLastForm = null;
+      // const $afterCloser = $wrapper.querySelector<HTMLElement>('[data-popup-after-close]');
+      // const afterCloserCallback: string = $afterCloser?.dataset.popupAfterClose || '';
+      // if (afterCloserCallback) {
+      //   window.eval(afterCloserCallback)($wrapper);
+      // }
+    },
+  });
+  document.querySelectorAll('.show_popup').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      popup.show('popup_1');
+    })
+  })
+  document.querySelectorAll('.show_popup_items').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      popup.show(el.dataset.href);
+    })
+  })
+</script>
+
+
+
+</body>
+</html>

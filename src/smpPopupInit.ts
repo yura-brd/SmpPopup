@@ -159,6 +159,7 @@ export class SmpPopupInit {
             const clickOutScroll: boolean = $target.clientWidth > e.clientX;
             if (clickOutScroll) {
               e.preventDefault();
+              this.returnBoolClose = !!$target.dataset.returnTrue;
               this.hide(false);
             }
           } else {

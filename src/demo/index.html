@@ -50,6 +50,56 @@
 	</div>
 </div>
 
+<button class="show_alert">show popup</button>
+
+<div class="items_popup" id="items_popup" style="display: none;">
+
+	<div id="page_alert">
+		<div class="b_popup__alert">
+			<div class="js_form_wrapper">
+				<div class="js_form_body" >
+					<div class="b_popup__titles">
+						<div class="b_popup__title js_alert_title"></div>
+						<p class="b_popup__title_desc js_alert_text"></p>
+					</div>
+
+					<div class="js_page_alert_alert visually-hidden">
+						<div class="form__bottom">
+							<button type="button"
+							        data-close="true"
+							        tabindex="1"
+							        data-focus="true"
+							        data-focus-close="true"
+							        class="btn this--pad"
+							>OK
+							</button>
+						</div>
+					</div>
+					<div class="js_page_alert_confirm visually-hidden">
+						<div class="form__bottom this--confirm">
+							<button
+									type="button"
+									class="btn btn--dark"
+									tabindex="0" data-close="true">Отмена</button>
+							<button
+									data-close="true"
+									type="button"
+									data-focus="true"
+									data-focus-close="true"
+									data-return-true="true"
+									class="btn"
+									id="alert_confirm_ok"
+									tabindex="1"
+							>OK</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
 
 <script>
   const popup = new SmpPopup({
@@ -71,6 +121,12 @@
     el.addEventListener('click', (e) => {
       e.preventDefault();
       popup.show('popup_1');
+    })
+  })
+  document.querySelectorAll('.show_alert').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      popup.show('page_alert');
     })
   })
   document.querySelectorAll('.show_popup_items').forEach(el => {

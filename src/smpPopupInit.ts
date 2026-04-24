@@ -29,6 +29,10 @@ export class SmpPopupInit {
 
   returnBoolClose = false;
 
+  isPopupOpen = false;
+
+  historyId: string;
+
   constructor(props: typePropsInit) {
     this.id = props.id;
     this.$this = props.$this;
@@ -41,11 +45,15 @@ export class SmpPopupInit {
 
     this.initHTML();
 
+    this.historyId = `smpPopup_${this.id}`;
+
     const open = () => {
       if (this.$wrapper) {
         this.$wrapper.classList.add('open');
         this.$wrapper.tabIndex = 0;
         document.body.classList.add('open_popup');
+        this.isPopupOpen = true;
+        window.history.pushState({ [this.historyId]: true }, '');
       }
     };
     // open();
@@ -59,6 +67,12 @@ export class SmpPopupInit {
     this.$wrapper.classList.remove('open');
     document.body.classList.remove('open_popup');
     this.localCallbackCloseBefore(this.id, this.returnBoolClose);
+
+    this.isPopupOpen = false;
+
+    if (window.history.state?.[this.historyId]) {
+      window.history.back();
+    }
 
     const classContainer = `.${this.classPopup}__content`; /* b_popup__content */
     const $popupContent: HTMLElement | null = this.$this.querySelector(classContainer);

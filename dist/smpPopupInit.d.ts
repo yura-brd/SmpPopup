@@ -14,6 +14,8 @@ export declare class SmpPopupInit {
     callbackCloseAlways: (($wrapper: HTMLElement) => void) | null;
     localCallbackCloseBefore: (id: string, returnBoolClose: boolean) => null;
     returnBoolClose: boolean;
+    isPopupOpen: boolean;
+    historyId: string;
     constructor(props: typePropsInit);
     hide(isDelete?: boolean): void;
     private initHTML;

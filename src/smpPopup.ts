@@ -66,6 +66,13 @@ export default class SmpPopup {
         });
       }
     }
+
+    window.addEventListener('popstate', () => {
+      const lastOpenPopup: SmpPopupInit = this.itemsPopup[this.itemsPopup.length - 1];
+      if (lastOpenPopup && lastOpenPopup.isPopupOpen) {
+        lastOpenPopup.hide();
+      }
+    });
   }
 
   private handlerClick(e: MouseEvent, elementNode: HTMLElement): void {

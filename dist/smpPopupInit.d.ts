@@ -17,6 +17,6 @@ export declare class SmpPopupInit {
     isPopupOpen: boolean;
     historyId: string;
     constructor(props: typePropsInit);
-    hide(isDelete?: boolean): void;
+    hide(isDelete?: boolean, isHistory?: boolean): void;
     private initHTML;
 }

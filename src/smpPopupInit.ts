@@ -60,7 +60,7 @@ export class SmpPopupInit {
     setTimeout(open, 10);
   }
 
-  hide(isDelete = false): void {
+  hide(isDelete = false, isFromHistory = false): void {
     if (!this.$wrapper) {
       return;
     }
@@ -68,11 +68,10 @@ export class SmpPopupInit {
     document.body.classList.remove('open_popup');
     this.localCallbackCloseBefore(this.id, this.returnBoolClose);
 
-    this.isPopupOpen = false;
-
-    if (window.history.state?.[this.historyId]) {
+    if (window.history.state?.[this.historyId] && !isFromHistory) {
       window.history.back();
     }
+    this.isPopupOpen = false;
 
     const classContainer = `.${this.classPopup}__content`; /* b_popup__content */
     const $popupContent: HTMLElement | null = this.$this.querySelector(classContainer);

@@ -70,7 +70,8 @@ export default class SmpPopup {
     window.addEventListener('popstate', () => {
       const lastOpenPopup: SmpPopupInit = this.itemsPopup[this.itemsPopup.length - 1];
       if (lastOpenPopup && lastOpenPopup.isPopupOpen) {
-        lastOpenPopup.hide();
+        lastOpenPopup.isPopupOpen = false;
+        lastOpenPopup.hide(false, true);
       }
     });
   }

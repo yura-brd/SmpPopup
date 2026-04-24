@@ -1,108 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-
-	<link rel="stylesheet" href="../style.css" />
-
-<!--	<script  src="../smpPopup.js"></script>-->
-
-	<style>
-		.b_popup__body {
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Document</title><link rel="stylesheet" href="../style.css"/><style>.b_popup__body {
 			width: 620px;
 		}
 		.test_content {
 			padding: 30px;
 			max-width: 100%;
-		}
-	</style>
-<link href="../style.css" rel="stylesheet"><script src="../smpPopup.js"></script></head>
-
-<style>
-
-</style>
-<body>
-
-<button class="show_popup">show popup</button>
-<button class="show_popup_items" data-href="popup_2">show popup 2</button>
-
-<div style="display: none;">
-	<div id="popup_1"  class="test_content">
-		<p>Lorem ipsum dolor sit amet.</p>
-		<div>
-			<label>
-				<input type="text">
-			</label>
-		</div>
-		<button class="show_popup_items" data-href="popup_2">show popup 2</button>
-
-	</div>
-	<div id="popup_2"  class="test_content">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores commodi delectus dolore, doloremque ipsum libero neque rerum sed soluta, vitae voluptas voluptate? Animi assumenda deserunt dicta doloremque eos esse ex expedita fuga fugit illum, ipsam maiores necessitatibus neque nihil nostrum, numquam optio ratione repellat sit suscipit totam vel voluptatum?
-		<div>
-			<button class="show_popup_items" data-href="popup_1">show popup 1</button>
-
-		</div>
-	</div>
-</div>
-
-<button class="show_alert">show popup</button>
-
-<div class="items_popup" id="items_popup" style="display: none;">
-
-	<div id="page_alert">
-		<div class="b_popup__alert">
-			<div class="js_form_wrapper">
-				<div class="js_form_body" >
-					<div class="b_popup__titles">
-						<div class="b_popup__title js_alert_title"></div>
-						<p class="b_popup__title_desc js_alert_text"></p>
-					</div>
-
-					<div class="js_page_alert_alert visually-hidden">
-						<div class="form__bottom">
-							<button type="button"
-							        data-close="true"
-							        tabindex="1"
-							        data-focus="true"
-							        data-focus-close="true"
-							        class="btn this--pad"
-							>OK
-							</button>
-						</div>
-					</div>
-					<div class="js_page_alert_confirm visually-hidden">
-						<div class="form__bottom this--confirm">
-							<button
-									type="button"
-									class="btn btn--dark"
-									tabindex="0" data-close="true">Отмена</button>
-							<button
-									data-close="true"
-									type="button"
-									data-focus="true"
-									data-focus-close="true"
-									data-return-true="true"
-									class="btn"
-									id="alert_confirm_ok"
-									tabindex="1"
-							>OK</button>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-</div>
-
-<script>
-  const popup = new SmpPopup({
+		}</style><link href="../style.css" rel="stylesheet"><script src="../smpPopup.js"></script></head><style></style><body><button class="show_popup">show popup</button> <button class="show_popup_items" data-href="popup_2">show popup 2</button><div style="display: none;"><div id="popup_1" class="test_content"><p>Lorem ipsum dolor sit amet.</p><div><label><input></label></div><button class="show_popup_items" data-href="popup_2">show popup 2</button></div><div id="popup_2" class="test_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores commodi delectus dolore, doloremque ipsum libero neque rerum sed soluta, vitae voluptas voluptate? Animi assumenda deserunt dicta doloremque eos esse ex expedita fuga fugit illum, ipsam maiores necessitatibus neque nihil nostrum, numquam optio ratione repellat sit suscipit totam vel voluptatum?<div><button class="show_popup_items" data-href="popup_1">show popup 1</button></div></div></div><button class="show_alert">show popup</button><div class="items_popup" id="items_popup" style="display: none;"><div id="page_alert"><div class="b_popup__alert"><div class="js_form_wrapper"><div class="js_form_body"><div class="b_popup__titles"><div class="b_popup__title js_alert_title"></div><p class="b_popup__title_desc js_alert_text"></p></div><div class="js_page_alert_alert visually-hidden"><div class="form__bottom"><button type="button" data-close="true" tabindex="1" data-focus="true" data-focus-close="true" class="btn this--pad">OK</button></div></div><div class="js_page_alert_confirm visually-hidden"><div class="form__bottom this--confirm"><button type="button" class="btn btn--dark" tabindex="0" data-close="true">Отмена</button> <button data-close="true" type="button" data-focus="true" data-focus-close="true" data-return-true="true" class="btn" id="alert_confirm_ok" tabindex="1">OK</button></div></div></div></div></div></div></div><script>const popup = new SmpPopup({
     closeAddClass: 'icon_close g_reset_btn',
     callbackOpenOnce: wrapperNode => {
 	    console.log('wrapperNode', wrapperNode);
@@ -134,10 +36,4 @@
       e.preventDefault();
       popup.show(el.dataset.href);
     })
-  })
-</script>
-
-
-
-</body>
-</html>
+  })</script></body></html>
